@@ -1,4 +1,6 @@
 let testLogic=(req,res)=>{
+  var names=['Anjali','Kiran','Shivk','Payal','Abhishek','Ruchika','Anil','Gunjan']
+  
     function getRamdomDateInBetween(start, end) {
         //start = Date.parse(2021-01-01);
         //start = Date.parse('2022-07-30');
@@ -11,7 +13,7 @@ let testLogic=(req,res)=>{
        //var finalDate = date.getDate()+'/'+ (date.getMonth()+1) +'/'+date.getFullYear();
        //after 7 day
        const date2 = new Date();
-      var end=  date2. setDate(date2. getDate() + 7)
+      var end=  date2.setDate(date2. getDate() + 7)
       //console.log(end)
     
          let date3=new Date(Math.floor(Math.random() * (end - start + 1) + start));
@@ -26,11 +28,13 @@ let testLogic=(req,res)=>{
 
         let orderArr = [];
         //True
+       
 
         for(var i=1; i < Math.ceil(Math.random()*20) ; i++){
             //console.log('hi')
             let order = {
                 //  "order_id": for(let i=1588;i<=1988;i++),
+                "customer_Name":names[parseInt(Math.random() * (names.length- 0) + 0) ],
                  "order_id":Math.ceil( Math.random() * (9556 - 4556) + 4556) ,
                   "arrives_at_utc": getRamdomDateInBetween(),
                   "paid_with": Math.random() > 0.5 ?"Cash":"Wallet",
